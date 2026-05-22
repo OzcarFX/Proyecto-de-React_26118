@@ -1,0 +1,22 @@
+.contenedor { display: flex; flex-direction: column; min-height: 100vh; }
+.header { background-color: #1e293b; color: white; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
+.logo { font-size: 1.4rem; font-weight: bold; }
+.nav a { color: #cbd5e1; text-decoration: none; margin-left: 15px; font-weight: 500; }
+.nav a:hover { color: #38bdf8; }
+.main { flex: 1; padding: 2rem; background-color: #f8fafc; }
+
+.footer { 
+  background-color: #0f172a; 
+  color: #94a3b8; 
+  padding: 2rem 1.5rem 1rem 1.5rem;
+}
+.anchoLimitado {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.copyright {
+  text-align: center;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+  color: #64748b;
+}

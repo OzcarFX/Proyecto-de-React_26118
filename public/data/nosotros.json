@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "nombre": "Oscar Horacio",
+    "email": "oscar@techtienda.com",
+    "puesto": "CEO & Lead Developer",
+    "foto": "/images/hombre1.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Lauti Rodríguez",
+    "email": "lauti@techtienda.com",
+    "puesto": "Product Manager",
+    "foto": "/images/hombre2.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Ana Gómez",
+    "email": "ana@techtienda.com",
+    "puesto": "Diseñadora UX/UI",
+    "foto": "/images/mujer1.webp"
+  },
+  {
+    "id": 4,
+    "nombre": "Romina Ruiz",
+    "email": "carlos@techtienda.com",
+    "puesto": "Fullstack Developer",
+    "foto": "/images/mujer2.jpg"
+  }
+]
