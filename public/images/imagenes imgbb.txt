@@ -1,0 +1,40 @@
+teclado_1
+https://i.ibb.co/VWQDSQc7/Teclado-1.jpg
+mouse_1
+https://i.ibb.co/RkHX2vNQ/mouse-1.jpg
+monitor_1
+https://i.ibb.co/DHTpX1MF/monitor-1.jpg
+epson_1
+https://i.ibb.co/60CZbVnk/epson-1.jpg
+hp_1
+https://i.ibb.co/1YvHZXkz/hp-1.jpg
+monitor_2
+https://i.ibb.co/5hSKkVKT/monitor-2.jpg
+mouse_2
+https://i.ibb.co/PzjXBg1b/mouse-2.jpg
+parlantes_1
+https://i.ibb.co/JF50Xy7W/parlantes-1.jpg
+
+equipo
+https://i.ibb.co/cSgQ78t1/hombre1.jpg
+https://i.ibb.co/8Df1BHmK/hombre2.jpg
+https://i.ibb.co/M5c0WYdx/mujer1.webp
+https://i.ibb.co/NdG58b7z/mujer2.jpg
+
+nombre
+categoria
+Tecnologia
+stock
+imagen
+
+PFI_TechTienda
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAk91CC4RKLNLc8XjKIL5Ib5mJ6GZycNrg",
+  authDomain: "react26118.firebaseapp.com",
+  projectId: "react26118",
+  storageBucket: "react26118.firebasestorage.app",
+  messagingSenderId: "481744433437",
+  appId: "1:481744433437:web:c60c3ad13311254727f1f4"
+};
+

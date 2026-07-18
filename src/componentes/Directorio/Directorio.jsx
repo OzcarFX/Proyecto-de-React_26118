@@ -2,6 +2,10 @@ import { useState, useEffect } from 'react';
 import { TarjetaContacto } from '../TarjetaContacto/TarjetaContacto';
 import styles from './Directorio.module.css';
 
+// HERRAMIENTAS DE FIREBASE 
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../../firebase/config'; 
+
 export function Directorio() {
   
   const [nosotros, setNosotros] = useState([]);
@@ -9,32 +13,34 @@ export function Directorio() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-   
-    const timer = setTimeout(() => {
-      fetch('/data/nosotros.json')
-        .then((respuesta) => {
-          if (!respuesta.ok) {
-            throw new Error('No se pudo obtener la información del equipo.');
-          }
-          return respuesta.json();
-        })
-        .then((datos) => {
-          setNosotros(datos);
-        })
-        .catch((err) => {
-          setError(err.message);
-        })
-        .finally(() => {
-          setCargando(false);
-        });
-    }, 1000);
+    //FUNCIÓN ASÍNCRONA PARA TRAER LOS DATOS DE LA NUBE
+    const obtenerEquipo = async () => {
+      try {
+        
+        const equipoRef = collection(db, "equipo");
+        const querySnapshot = await getDocs(equipoRef);
+        
+        // Mapeo los documentos de Firebase a un array
+        const datosFirebase = querySnapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }));
+        
+        setNosotros(datosFirebase);
+      } catch (err) {
+        console.error(err);
+        setError('No se pudo obtener la información del equipo desde Firebase.');
+      } finally {
+        setCargando(false);
+      }
+    };
 
-    return () => clearTimeout(timer); 
-  }, []);
+    obtenerEquipo();
+  }, []); // Se ejecuta solo una vez al montar el componente
 
   
   if (cargando) {
-    return <p className={styles.infoMensaje}>⏳ Cargando equipo de creadores...</p>;
+    return <p className={styles.infoMensaje}>⏳ Cargando equipo de creadores desde la nube... ☁️</p>;
   }
 
   if (error) {
