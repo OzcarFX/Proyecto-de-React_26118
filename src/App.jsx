@@ -6,6 +6,8 @@ import { ItemListContainer } from './componentes/ItemListContainer/ItemListConta
 import { ProductoDetalle } from './componentes/Productos/ProductoDetalle'; 
 import Cart from './componentes/Cart/Cart'; 
 
+import { Gestion } from './componentes/Gestion/Gestion';
+
 function App() {
   return (
     <Routes>
@@ -14,6 +16,7 @@ function App() {
         <Route path="/productos" element={<ItemListContainer />} />
         <Route path="/producto/:id" element={<ProductoDetalle />} />
         <Route path="/carrito" element={<Cart />} />
+        <Route path="/admin" element={<Gestion />} />
       </Route>
     </Routes>
   );

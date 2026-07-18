@@ -1,15 +1,15 @@
-// src/componentes/layout/Layout.jsx
 import { Link, Outlet } from 'react-router-dom';
-import { useCart } from '../../context/CartContext'; // 1. Importamos el hook global
+import { useCart } from '../../context/CartContext'; 
 import { Directorio } from '../Directorio/Directorio';
 import styles from './Layout.module.css';
 
 export function Layout() {
-  const { getCartQuantity } = useCart(); // 2. Traemos la función del total de items
+  const { getCartQuantity } = useCart(); 
   const totalItems = getCartQuantity();
 
   return (
     <div className={styles.contenedor}>
+      {}
       <header className={styles.header}>
         <div className={styles.logo}>🚀 TechTienda</div>
         <nav className={styles.nav}>
@@ -17,7 +17,11 @@ export function Layout() {
           <Link to="/productos">Productos</Link>
           <a href="#">Contacto</a>
           
-          {/* 3. Agregamos el enlace al Carrito con su globito dinámico */}
+          {}
+          <Link to="/admin" className={styles.linkAdmin}>
+            Admin 🛠️
+          </Link>
+          
           <Link to="/carrito" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
             🛒 Carrito 
             {totalItems > 0 && (
@@ -36,6 +40,7 @@ export function Layout() {
         </nav>
       </header>
       
+      {}
       <main className={styles.main}>
         <Outlet />
       </main>

@@ -3,7 +3,8 @@ import { useCart } from '../../context/CartContext';
 import { Link } from 'react-router-dom';
 
 export default function Cart() {
-  const { cart, clearCart, getCartTotal, getCartQuantity } = useCart();
+
+  const { cart, clearCart, getCartTotal, getCartQuantity, removeItem } = useCart();
 
   if (cart.length === 0) {
     return (
@@ -22,6 +23,8 @@ export default function Cart() {
       <div style={{ marginTop: '20px' }}>
         {cart.map((item) => (
           <div key={item.id} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '15px 0', borderBottom: '1px solid #e2e8f0' }}>
+            
+            {}
             <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
               <img src={item.imagen} alt={item.nombre} style={{ width: '60px', height: '60px', objectFit: 'contain' }} />
               <div>
@@ -31,9 +34,37 @@ export default function Cart() {
                 </p>
               </div>
             </div>
-            <p style={{ fontWeight: 'bold' }}>
-              ${(item.precio * item.quantity).toLocaleString('es-AR')}
-            </p>
+            
+            {}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+              <p style={{ fontWeight: 'bold', margin: 0 }}>
+                ${(item.precio * item.quantity).toLocaleString('es-AR')}
+              </p>
+              
+              {/* Botón de Cesto de Basura */}
+              <button 
+                onClick={() => removeItem(item.id)} 
+                title="Quitar del carrito"
+                style={{ 
+                  background: 'none', 
+                  border: 'none', 
+                  fontSize: '1.2rem', 
+                  cursor: 'pointer',
+                  padding: '5px 8px',
+                  borderRadius: '4px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  transition: 'transform 0.1s ease'
+                }}
+                
+                onMouseEnter={(e) => e.target.style.transform = 'scale(1.2)'}
+                onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
+              >
+                🗑️
+              </button>
+            </div>
+
           </div>
         ))}
       </div>
