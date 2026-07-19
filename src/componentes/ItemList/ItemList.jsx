@@ -1,4 +1,3 @@
-// src/componentes/ItemList/ItemList.jsx
 import { Item } from '../Item/Item';
 import styles from './ItemList.module.css';
 

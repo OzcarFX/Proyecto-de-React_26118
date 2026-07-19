@@ -38,3 +38,4 @@ const firebaseConfig = {
   appId: "1:481744433437:web:c60c3ad13311254727f1f4"
 };
 
+npm run dev

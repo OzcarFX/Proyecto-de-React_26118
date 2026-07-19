@@ -9,15 +9,15 @@ export function Layout() {
 
   return (
     <div className={styles.contenedor}>
-      {}
+      
       <header className={styles.header}>
-        <div className={styles.logo}>🚀 TechTienda</div>
+        <div className={styles.logo}>🚀*** TechTienda</div>
         <nav className={styles.nav}>
           <Link to="/">Inicio</Link>
           <Link to="/productos">Productos</Link>
           <a href="#">Contacto</a>
           
-          {}
+          
           <Link to="/admin" className={styles.linkAdmin}>
             Admin 🛠️
           </Link>
@@ -40,7 +40,7 @@ export function Layout() {
         </nav>
       </header>
       
-      {}
+      
       <main className={styles.main}>
         <Outlet />
       </main>

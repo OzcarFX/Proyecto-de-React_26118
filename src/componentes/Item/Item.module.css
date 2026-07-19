@@ -16,4 +16,4 @@
   transition: transform 0.1s ease, color 0.2s ease;
 }
 .estrella:hover { transform: scale(1.2); }
-.estrella.activa { color: #f59e0b; } /* Cambia a color dorado/amarillo al rellenarse */
+.estrella.activa { color: #f59e0b; } 

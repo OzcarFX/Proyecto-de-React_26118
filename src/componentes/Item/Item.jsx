@@ -19,7 +19,7 @@ export function Item({ id, nombre, precio, imagen }) {
     const producto = { id, nombre, precio, imagen };
     addToCart(producto, cantidad);
     alert(`¡Agregaste ${cantidad} unidad/es de ${nombre} al carrito!`);
-    setCantidad(1); // Reseteamos el contador a 1
+    setCantidad(1); // Reseteo el contador a 1
   };
 
   return (

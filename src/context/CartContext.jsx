@@ -1,5 +1,4 @@
 
-// src/context/CartContext.jsx
 import { createContext, useContext, useState } from 'react';
 
 export const CartContext = createContext();
@@ -15,7 +14,7 @@ export const useCart = () => {
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  // Verificar si el producto ya existe en el carrito
+  // Verifico si el producto ya existe en el carrito
   const isInCart = (id) => cart.some(item => item.id === id);
 
   // Agregar productos manejando duplicados
@@ -39,7 +38,7 @@ export const CartProvider = ({ children }) => {
   // Vaciar carrito por completo
   const clearCart = () => setCart([]);
 
-  // Saber cuántos items totales hay (para el Navbar)
+  // Saber cuántos items totales hay 
   const getCartQuantity = () => {
     return cart.reduce((acc, item) => acc + item.quantity, 0);
   };
@@ -49,10 +48,9 @@ export const CartProvider = ({ children }) => {
     return cart.reduce((acc, item) => acc + item.precio * item.quantity, 0);
   };
 
-  // NUEVO: Saber qué cantidad de un producto específico ya hay en el carrito
+  // Saber qué cantidad de un producto específico ya hay en el carrito
   const getCantidadActual = (productId) => {
     const item = cart.find(item => item.id === productId);
-    // Nota de clase: mapeamos tanto 'cantidad' como 'quantity' para evitar inconsistencias
     return item ? (item.quantity || item.cantidad) : 0;
   };
 

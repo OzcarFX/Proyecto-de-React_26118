@@ -44,7 +44,7 @@ export function ItemListContainer() {
 
     obtenerProductos();
   }, [categoryId]); 
-  // Manejo del estado de carga (visto en Clase 6)
+  // Manejo del estado de carga
   if (loading) {
     return <h2 style={{ textAlign: 'center', padding: '50px' }}>Cargando catálogo desde Firebase... ☁️</h2>;
   }
