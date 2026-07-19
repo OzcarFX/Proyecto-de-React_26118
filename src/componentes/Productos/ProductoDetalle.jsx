@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-// Importamos las herramientas necesarias de Firebase
+// herramientas necesarias de Firebase
 import { getFirestore, doc, getDoc } from 'firebase/firestore'; 
 
 export function ProductoDetalle() {
@@ -9,17 +9,17 @@ export function ProductoDetalle() {
   const [cargando, setCargando] = useState(true);
 
   useEffect(() => {
-    // 1. Inicializamos la base de datos de Firebase
+    // Inicio la base de datos de Firebase
     const db = getFirestore();
     
-    // 2. Apuntamos al documento específico usando el ID de la URL (que es un String)
+    
     const queryDoc = doc(db, 'productos', id); 
 
-    // 3. Traemos el documento desde Firestore
+    //documento desde Firestore
     getDoc(queryDoc)
       .then(res => {
         if (res.exists()) {
-          // Si el producto existe, guardamos su ID de Firebase y sus datos
+          // Si el producto existe, guardo su ID de Firebase y sus datos
           setProducto({ id: res.id, ...res.data() });
         } else {
           console.log("No se encontró el documento en la base de datos");
@@ -39,17 +39,17 @@ export function ProductoDetalle() {
       maxWidth: '500px', 
       margin: '40px auto', 
       padding: '20px', 
-      border: '1px solid #00ff41', // Borde verde temático Matrix
+      border: '1px solid #00ff41',
       borderRadius: '8px', 
       textAlign: 'center',
-      backgroundColor: '#1a1a1a', // Fondo oscuro a tono
+      backgroundColor: '#1a1a1a',
       color: '#ffffff',
       fontFamily: 'monospace',
       boxShadow: '0 0 15px rgba(0, 255, 65, 0.1)'
     }}>
       <h2 style={{ color: '#00ff41' }}>{producto.nombre}</h2>
       
-      {/* Soporta tanto 'imagen' como 'urlImagen' según cómo lo hayas guardado en Firebase */}
+      
       <img 
         src={producto.imagen || producto.urlImagen} 
         alt={producto.nombre} 
@@ -58,7 +58,7 @@ export function ProductoDetalle() {
       
       <h3 style={{ color: '#00ff41', fontSize: '1.5rem' }}>${producto.precio}</h3>
       
-      {/* CORRECCIÓN: Ahora repite el nombre del producto de Firebase como descripción */}
+      {/* Repite el nombre del producto de Firebase como descripción */}
       <p style={{ color: '#ccc', lineHeight: '1.5', fontSize: '1.1rem' }}>
         {producto.nombre}
       </p>
